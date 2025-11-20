@@ -1,0 +1,10 @@
+groups:
+  - name: gcp-simulated
+    interval: 15s
+    rules:
+      - record: gcp_gce_cpu_utilization_average
+        expr: vector(0.35)
+        labels:
+          project: demo-gcp-project
+          instance: demo-instance
+          zone: us-central1-a

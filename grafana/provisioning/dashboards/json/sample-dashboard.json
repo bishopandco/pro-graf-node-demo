@@ -1,0 +1,54 @@
+{
+  "id": null,
+  "uid": "gcp-demo-dashboard",
+  "title": "GCP CPU Demo",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "timezone": "browser",
+  "panels": [
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "Simulated GCP CPU Utilization",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus-default"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "gcp_gce_cpu_utilization_average"
+        }
+      ],
+      "options": {
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        }
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  }
+}
